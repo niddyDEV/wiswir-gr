@@ -1,27 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .nav-text {
+    @apply font-bold text-xl;
+  }
+}
+
+@layer base {
+  :root {
+    /* Оставьте все переменные как есть */
+  }
+  .dark {
+    /* Оставьте все переменные как есть */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-purple {
+  background: linear-gradient(270deg, #000000, #4A0E4E, #9A2EB6);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+.animated-gradient-blue {
+  background: linear-gradient(270deg, #61DAFB, #4DA8FD, #2D91FF, #1E7AF3, #0052D4);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+.animated-gradient-indigo {
+  background: linear-gradient(270deg, #4B0082, #5D3FD3, #9400D3);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
 }
