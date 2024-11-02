@@ -4,8 +4,11 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Register() {
+  const router = useRouter();
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -21,10 +24,37 @@ export default function Register() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Здесь будет логика отправки данных на сервер
-    console.log('Form submitted:', formData);
+    setError('');
+
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+
+      const data = await response.json();
+      console.log('Registration successful:', data);
+      
+      router.push('/dashboard');
+      
+    } catch (err) {
+      setError('An error occurred during registration. Please try again.');
+      console.error('Registration error:', err);
+    }
   };
 
   return (
@@ -109,6 +139,7 @@ export default function Register() {
               Sign up
             </Button>
           </div>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
         </form>
         <div className="text-center">
           <p className="mt-2 text-sm text-gray-600">

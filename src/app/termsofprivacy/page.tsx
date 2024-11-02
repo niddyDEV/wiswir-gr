@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from 'next/image'
+import { Button } from "@/components/ui/button"
 
 export default function TermsOfPrivacy() {
   return (
@@ -16,7 +17,19 @@ export default function TermsOfPrivacy() {
             />
           </Link>
           <nav className="flex items-center gap-8">
-            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/">Home</Link>
+            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/#wbsc">WBSC</Link>
+            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/#dex">WISDEX</Link>
+            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/#events">Events</Link>
+            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/#about">About</Link>
+            <Link className="nav-text text-xl font-bold hover:text-purple-600 transition-colors" href="/#contact">Contact</Link>
+            <div className="flex items-center gap-4">
+              <Button variant="outline" className="text-lg font-semibold px-5 py-1.5 border-2">
+                <Link href="/login">Sign In</Link>
+              </Button>
+              <Button className="text-lg font-semibold text-white gradient-primary px-5 py-1.5">
+                <Link href="/register">Sign Up</Link>
+              </Button>
+            </div>
           </nav>
         </div>
       </header>
@@ -27,7 +40,7 @@ export default function TermsOfPrivacy() {
               Политика конфиденциальности WISWIR GROUP
             </h1>
             <div className="prose prose-lg max-w-none bg-white p-8 rounded-lg shadow-md">
-              <p className="text-gray-600 mb-6">Дата вступления в силу: [Укажите дату]</p>
+              <p className="text-gray-600 mb-6">Дата вступления в силу: [02.11.2024]</p>
               
               <p className="mb-6">В WISWIR GROUP (далее - «Компания», «мы», «нас» или «наш») мы серьезно относимся к вашей конфиденциальности и защиты ваших личных данных. Настоящая Политика конфиденциальности описывает, как мы собираем, используем, раскрываем и защищаем информацию, которую вы предоставляете нам при использовании наших сервисов, включая, но не ограничиваясь, WISWIR BSC, WISDEX и WISWIR Events.</p>
 
@@ -85,8 +98,7 @@ export default function TermsOfPrivacy() {
       <footer className="w-full flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center justify-center px-4 md:px-6 border-t text-center">
         <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 WISWIR GROUP. All rights reserved.</p>
         <nav className="flex gap-4 sm:gap-6 justify-center">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">Terms of Service</Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">Privacy</Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">Terms of Privacy</Link>
         </nav>
       </footer>
     </div>

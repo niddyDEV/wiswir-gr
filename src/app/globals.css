@@ -52,3 +52,33 @@ html {
   background-size: 300% 300%;
   animation: gradientAnimation 5s ease infinite;
 }
+
+.gradient-button {
+  background: linear-gradient(to bottom, #3D8AB0, #A03A99);
+  transition: opacity 0.3s ease;
+}
+
+.gradient-button:hover {
+  opacity: 0.9;
+}
+
+/* Добавьте эти новые классы для градиентных кнопок */
+.gradient-primary {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  transition: all 0.3s ease;
+}
+
+.gradient-primary:hover {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  transform: translateY(-1px);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  transition: all 0.3s ease;
+}
+
+.gradient-secondary:hover {
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  transform: translateY(-1px);
+}

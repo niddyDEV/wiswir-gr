@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -39,8 +41,9 @@ export default function Login() {
 
       const data = await response.json();
       console.log('Login successful:', data);
-      // Здесь вы можете добавить логику для перенаправления пользователя
-      // или сохранения токена аутентификации
+      
+      router.push('/dashboard');
+      
     } catch (err) {
       setError('An error occurred during login. Please try again.');
       console.error('Login error:', err);

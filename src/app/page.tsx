@@ -27,7 +27,7 @@ export default function Component() {
               <Button variant="outline" className="text-lg font-semibold px-5 py-1.5 border-2">
                 <Link href="/login">Sign In</Link>
               </Button>
-              <Button className="text-lg font-semibold bg-purple-600 text-white hover:bg-purple-700 px-5 py-1.5">
+              <Button className="text-lg font-semibold text-white gradient-primary px-5 py-1.5">
                 <Link href="/register">Sign Up</Link>
               </Button>
             </div>
@@ -47,15 +47,19 @@ export default function Component() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button size="lg" className="bg-purple-600 text-white hover:bg-purple-700 text-lg font-bold py-4 px-8">Get Started</Button>
-                <Button size="lg" variant="outline" className="bg-white text-purple-600 hover:bg-purple-100 text-lg font-bold py-4 px-8">Learn More</Button>
+                <Button size="lg" className="text-white gradient-primary text-lg font-bold py-4 px-8">
+                  Get Started
+                </Button>
+                <Button size="lg" className="text-white gradient-secondary text-lg font-bold py-4 px-8">
+                  Learn More
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
         {/* WISWIR BSC section */}
-        <section id="wbsc" className="w-full py-8 md:py-12 lg:py-16 flex justify-center">
+        <section id="wbsc" className="w-full py-4 md:py-6 lg:py-8 flex justify-center">
           <div className="container px-4 md:px-6 max-w-7xl">
             <div className="animated-gradient-purple text-white text-center rounded-3xl p-8 md:p-12 lg:p-16">
               <h2 className="text-3xl font-bold tracking-widest sm:text-4xl md:text-5xl mb-8">WISWIR Business Education</h2>
@@ -92,7 +96,7 @@ export default function Component() {
         </section>
 
         {/* DEX section */}
-        <section id="dex" className="w-full py-8 md:py-12 lg:py-16 flex justify-center">
+        <section id="dex" className="w-full py-4 md:py-6 lg:py-8 flex justify-center">
           <div className="container px-4 md:px-6 max-w-7xl">
             <div className="animated-gradient-blue text-gray-800 text-center rounded-3xl p-8 md:p-12 lg:p-16">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Decentralized Exchange</h2>
@@ -123,7 +127,7 @@ export default function Component() {
         </section>
 
         {/* Web3 Events section */}
-        <section id="events" className="w-full py-8 md:py-12 lg:py-16 flex justify-center">
+        <section id="events" className="w-full py-4 md:py-6 lg:py-8 flex justify-center">
           <div className="container px-4 md:px-6 max-w-7xl">
             <div className="animated-gradient-indigo text-white text-center rounded-3xl p-8 md:p-12 lg:p-16">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Web3 Events</h2>
@@ -174,8 +178,7 @@ export default function Component() {
       <footer className="w-full flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center justify-center px-4 md:px-6 border-t text-center">
         <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 WISWIR GROUP. All rights reserved.</p>
         <nav className="flex gap-4 sm:gap-6 justify-center">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">Terms of Service</Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">Privacy</Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="/termsofprivacy">Terms of Privacy</Link>
         </nav>
       </footer>
     </div>
